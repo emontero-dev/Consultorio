@@ -20,3 +20,4 @@ class Paciente(models.Model):
     numero_telefono = models.IntegerField(verbose_name="numero_telefono", null=True, blank=False)
     e_mail = models.CharField(max_length=255, verbose_name="e_mail", null=True, blank=False)
     e_mail_normalizado = models.CharField(max_length=255, verbose_name="e_mail_normalizado", null=True, blank=False)
+
