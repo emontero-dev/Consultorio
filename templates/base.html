@@ -53,6 +53,25 @@
             height: 70px;
             width: 110px;
         }
+
+        .icon-edit{
+            width: 30px;
+            height: 30px;
+        }
+
+        .edit_menu  {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        td {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -61,20 +80,20 @@
     {% if user.is_authenticated %}
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <a class="navbar-brand nav-logo" href="{% url 'home' %}"><img class="logo-navbar" src="../media/Logo/default-logo.png" alt=""></a>
+    <a class="navbar-brand nav-logo" href="{% url 'home' %}"><img class="logo-navbar" src="/media/Logo/default-logo.png" alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'home' %}"><img class="icons-dash" src="../media/Logo/Icons/home.png" alt=""></a>
+                <a class="nav-link" href="{% url 'home' %}"><img class="icons-dash" src="/media/Logo/Icons/home.png" alt=""></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><img class="icons-dash" src="../media/Logo/Icons/settings.png" alt=""></a>
+                <a class="nav-link" href="#"><img class="icons-dash" src="/media/Logo/Icons/settings.png" alt=""></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout' %}"><img class="icons-dash" src="../media/Logo/Icons/logout.png" alt=""></a>
+                <a class="nav-link" href="{% url 'logout' %}"><img class="icons-dash" src="/media/Logo/Icons/logout.png" alt=""></a>
             </li>
         </ul>
     </div>
@@ -91,7 +110,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'pacientes' %}">
+                        <a class="nav-link" href="{% url 'Pacientes' %}">
                             Pacientes
                         </a>
                     </li>

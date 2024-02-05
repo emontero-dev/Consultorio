@@ -2,16 +2,16 @@ from django.db import models
 
 class Pacientes(models.Model):
     """ VARIABLES DEL PACIENTE """
-    PacientesNombre = models.CharField(max_length=100, null=False, blank=False, verbose_name="Pacientes")
-    PacientesApellido = models.CharField(max_length=100, null=False, blank=False)
-    PacientesDireccion = models.CharField(max_length=100, null=False, blank=False)
-    PacientesTelefono = models.CharField(max_length=10, null=False, blank=False)
-    PacientesEmail = models.CharField(max_length=100, null=False, blank=False)
-    PacientesEmailNormalizado = models.CharField(max_length=100, null=False, blank=False)
-    PacientesActivo = models.BooleanField(default=True)
+    PacientesNombre = models.CharField(max_length=100, null=False, blank=False, verbose_name="Nombre")
+    PacientesApellido = models.CharField(max_length=100, null=False, blank=False, verbose_name="Apellidos")
+    PacientesDireccion = models.CharField(max_length=100, null=False, blank=False, verbose_name="Dirección")
+    PacientesTelefono = models.CharField(max_length=10, null=False, blank=False, verbose_name="Teléfono")
+    PacientesEmail = models.CharField(max_length=100, null=False, blank=False, verbose_name="Email")
+    PacientesEmailNormalizado = models.CharField(max_length=100, null=False, blank=False, verbose_name="Email Normalizado")
+    PacientesActivo = models.BooleanField(default=True, verbose_name="Activo")
 
     def __str__(self):
-        return self.PacientesNombre
+        return self.PacientesNombre + " " + self.PacientesApellido
 
     class Meta:
         verbose_name_plural = "Pacientes"

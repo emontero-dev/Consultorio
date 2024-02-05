@@ -1,5 +1,8 @@
 from django.shortcuts import render
+from .models import Pacientes
 
-# Create your views here.
 def pacientes(request):
-    return render(request, 'pacientes.html')
+    context = {
+        'pacientes': Pacientes.objects.all()
+    }
+    return render(request, 'pacientes.html', context)

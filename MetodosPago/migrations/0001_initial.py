@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
                 ('FacturasFechaFactura', models.DateField()),
                 ('Facturas_Monto', models.DecimalField(decimal_places=2, max_digits=10)),
                 ('FacturasDetalle', models.CharField(max_length=300)),
-                ('Facturas_PacienteId', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='Pacientes.pacientes')),
+                ('Facturas_PacienteId', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='Pacientes.Pacientes')),
             ],
         ),
         migrations.CreateModel(
@@ -42,7 +42,7 @@ class Migration(migrations.Migration):
                 ('PagosFechaPago', models.DateField()),
                 ('Pagos_Monto', models.DecimalField(decimal_places=2, max_digits=10)),
                 ('PagosActivo', models.BooleanField(default=True)),
-                ('Pagos_PacienteId', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='Pacientes.pacientes')),
+                ('Pagos_PacienteId', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='Pacientes.Pacientes')),
             ],
             options={
                 'verbose_name_plural': 'Pagos',

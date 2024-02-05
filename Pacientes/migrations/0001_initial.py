@@ -43,7 +43,7 @@ class Migration(migrations.Migration):
                 ('ImagenesMedicasTiposDescripcion', models.CharField(max_length=200)),
                 ('ImagenesMedicas_Img', models.ImageField(upload_to='ImagenesMedicas')),
                 ('ImagenesMedicas_Tipos', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='Pacientes.imagenesmedicastipos')),
-                ('ImagenesMedicas_PacienteId', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='Pacientes.pacientes')),
+                ('ImagenesMedicas_PacienteId', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='Pacientes.Pacientes')),
             ],
             options={
                 'verbose_name_plural': 'Imagenes Medicas',
