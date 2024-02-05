@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
 def home(request):
-    return render(request, 'Login/Home.html')
+    return render(request, 'Home.html')
 
 def login_user(request):
     if request.method == "POST":
@@ -17,7 +17,7 @@ def login_user(request):
             messages.success(request, ('Please enter a correct username and password. Try again!'))
             return redirect('login')
     else:
-        return render(request, 'Login/Login.html', {})
+        return render(request, 'Login.html', {})
 
 
 def logout_user(request):

@@ -5,11 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ee2b99c-cb79-4c6d-aaf4-a172d851423f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Pacientes/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/Logo/Icons/home.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/Logo/Icons/logout.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/Logo/Icons/settings.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/Logo/default-logo1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pacientes.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Login/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Consultorio/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Consultorio/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Login/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacientes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacientes/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Login/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Login/Login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/Logo/default-logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/Logo/default-logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Login/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Login/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -63,6 +72,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Eliott Montero\Documents\GitHub\Consultorio\templates" />
+      <recent name="C:\Users\Eliott Montero\Documents\GitHub\Consultorio\templates\Login" />
       <recent name="$PROJECT_DIR$/templates/Login" />
       <recent name="$PROJECT_DIR$/media/Logo" />
     </key>
@@ -110,7 +121,7 @@
       <updated>1706851318006</updated>
       <workItem from="1706851323506" duration="3397000" />
       <workItem from="1707011965029" duration="216000" />
-      <workItem from="1707151645633" duration="8315000" />
+      <workItem from="1707151645633" duration="11756000" />
     </task>
     <servers />
   </component>
