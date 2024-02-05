@@ -24,6 +24,12 @@ class ImagenesMedicasTipos(models.Model):
     ImagenesMedicasTiposNombre = models.CharField(max_length=100, null=False, blank=False, choices=[(x, x) for x in tiposImagenes])
     ImagenesMedicasTiposActivo = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.ImagenesMedicasTiposNombre
+
+    class Meta:
+        verbose_name_plural = "Imagenes Medicas Tipos"
+
 class ImagenesMedicas(models.Model):
     """TABLA DE IMAGENES MEDICAS PARA NORMALIZAR """
     ImagenesMedicas_PacienteId = models.ForeignKey(Pacientes, on_delete=models.DO_NOTHING, null=False, blank=False)

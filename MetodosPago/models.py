@@ -29,3 +29,9 @@ class Facturas(models.Model):
     FacturasFechaFactura = models.DateField(null=False, blank=False)
     Facturas_Monto = models.DecimalField(null=False, blank=False, max_digits=10, decimal_places=2)
     FacturasDetalle = models.CharField(max_length=300, null=False, blank=False)
+
+    def __str__(self):
+        return self.Facturas_PacienteId
+
+    class Meta:
+        verbose_name_plural = "Facturas"
