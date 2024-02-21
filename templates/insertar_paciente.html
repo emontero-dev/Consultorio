@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertar Paciente</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container py-4">
+
+        <form method="POST" action="{% url 'insertar_paciente' %}" class="needs-validation" novalidate>
+
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="PacientesNombre" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" id="PacientesNombre" name="PacientesNombre" required>
+                <div class="invalid-feedback">
+                    Ingresa un nombre válido.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="PacientesApellido" class="form-label">Apellidos:</label>
+                <input type="text" class="form-control" id="PacientesApellido" name="PacientesApellido" required>
+                <div class="invalid-feedback">
+                    Ingresa un primer apellido válido.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="PacientesDireccion" class="form-label">Dirección:</label>
+                <input type="text" class="form-control" id="PacientesDireccion" name="PacientesDireccion" required>
+                <div class="invalid-feedback">
+                    Ingresa una dirección válida.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="PacientesTelefono" class="form-label">Teléfono:</label>
+                <input type="text" class="form-control" id="PacientesTelefono" name="PacientesTelefono" required>
+                <div class="invalid-feedback">
+                    Ingresa un número de teléfono válido.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="PacientesEmail" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="PacientesEmail" name="PacientesEmail" required>
+                <div class="invalid-feedback">
+                    Ingresa un correo electrónico válido.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="PacientesEmailNormalizado" class="form-label">Email Normalizado:</label>
+                <input type="email" class="form-control" id="PacientesEmailNormalizado" name="PacientesEmailNormalizado" required>
+                <div class="invalid-feedback">
+                    Ingresa un correo electrónico normalizado válido.
+                </div>
+            </div>
+
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="PacientesActivo" name="PacientesActivo" checked>
+                <label class="form-check-label" for="PacientesActivo">
+                    Activo
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+
+            {% if messages %}
+            {% for message in messages %}
+            <h2 style="color: green;">{{message}}</h2>
+            {% endfor %}
+            {% endif %}
+        </form>
+
+
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

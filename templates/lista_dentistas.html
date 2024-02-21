@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Dentistas</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Especialidad</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+                <th>Activo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dentista in dentistas %}
+            <tr>
+                <td>{{ dentista.DentistasID }}</td>
+                <td>{{ dentista.DentistasNombre }}</td>
+                <td>{{ dentista.DentistasApellido }}</td>
+                <td>{{ dentista.DentistasEspecialidad }}</td>
+                <td>{{ dentista.DentistasTelefono }}</td>
+                <td>{{ dentista.DentistasEmail }}</td>
+                <td>{{ dentista.DentistasActivo }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
