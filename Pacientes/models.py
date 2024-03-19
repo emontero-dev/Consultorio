@@ -18,7 +18,7 @@ class Dentistas(models.Model):
 
 
 class Pacientes(models.Model):
-    """ VARIABLES DEL PACIENTE """
+    
     id = models.AutoField(primary_key=True)
     PacientesNombre = models.CharField(max_length=100, null=False, blank=False, verbose_name="Nombre")
     PacientesApellido = models.CharField(max_length=100, null=False, blank=False, verbose_name="Apellidos")
@@ -47,9 +47,7 @@ class TratamientoPaciente(models.Model):
 
 class Historial(models.Model):
     Id_Historial = models.AutoField(primary_key=True)
-    Tratamiento_Paciente_id = models.ForeignKey('TratamientoPaciente', on_delete=models.CASCADE)
-    Paciente_id_foreign_key = models.ForeignKey('Pacientes', on_delete=models.CASCADE)
-    dentista = models.ForeignKey(Dentistas, on_delete=models.CASCADE)  # Relación con la tabla Dentistas
+    Paciente_id_foreign_key = models.ForeignKey('Pacientes', on_delete=models.CASCADE, default=1)
     Description = models.TextField()
     StartDate = models.DateField()
     EndDate = models.DateField()
