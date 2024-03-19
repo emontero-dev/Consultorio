@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertar Tratamiento para Paciente</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container py-4">
+        <h2>Insertar Tratamiento para Paciente</h2>
+        <form method="post" class="needs-validation" novalidate>
+
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="tratamiento_id">ID del Tratamiento:</label>
+                <input type="number" class="form-control" id="tratamiento_id" name="tratamiento_id" required>
+                <div class="invalid-feedback">
+                    Por favor, ingresa un ID válido del tratamiento.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="pieza_dental">Pieza Dental:</label>
+                <input type="number" class="form-control" id="pieza_dental" name="pieza_dental" required>
+                <div class="invalid-feedback">
+                    Por favor, ingresa un número válido para la pieza dental.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="paciente_id">ID del Paciente:</label>
+                <input type="number" class="form-control" id="paciente_id" name="paciente_id" required>
+                <div class="invalid-feedback">
+                    Por favor, ingresa un ID válido del paciente.
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+
+        {% if messages %}
+            {% for message in messages %}
+                <h2 style="color: green;">{{message}}</h2>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+{% endblock %}

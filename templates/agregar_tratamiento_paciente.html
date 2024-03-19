@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+
+<div class="container">
+    <h1 class="mt-5 mb-4">Agregar Tratamiento a Paciente</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="tratamiento">Tratamiento:</label>
+            <select id="tratamiento" name="tratamiento" class="form-control" required>
+                <option value="">Seleccionar Tratamiento</option>
+                {% for tratamiento in tratamientos %}
+                <option value="{{ tratamiento.pk }}">{{ tratamiento.nombre_tratamiento }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="pieza_dental">Pieza Dental:</label>
+            <input type="number" id="pieza_dental" name="pieza_dental" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="paciente">Paciente:</label>
+            <select id="paciente" name="paciente" class="form-control" required>
+                <option value="">Seleccionar Paciente</option>
+                {% for paciente in pacientes %}
+                <option  value="{{ paciente.pk }}" class="text-color">{{ paciente.PacientesNombre }} {{ paciente.PacientesApellido }}</option>
+                {% endfor %}
+            </select>
+            
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</div>
+
+
+{% endblock %}

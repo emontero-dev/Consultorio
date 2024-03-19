@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,6 +10,7 @@
     <title>Lista de Pacientes</title>
 </head>
 <body>
+    
     <table>
         <thead>
             <tr>
@@ -17,6 +22,7 @@
                 <th>Email</th>
                 <th>Email Normalizado</th>
                 <th>Activo</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -34,5 +40,11 @@
             {% endfor %}
         </tbody>
     </table>
+    
 </body>
 </html>
+
+
+
+{% endblock %}
+

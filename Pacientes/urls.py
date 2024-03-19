@@ -12,5 +12,11 @@ urlpatterns = [
     path('pacientes/', views.listar_pacientes, name='listar_pacientes'),
     path('insertar_tratamiento/', views.insertar_tratamiento, name='insertar_tratamiento'),
     path('tratamientos/', views.listar_tratamientos, name='listar_tratamientos'),
-    
+    path('insertar_historial/', views.insertar_historial, name='insertar_historial'),
+    path('listar_historiales/', views.listar_historiales, name='listar_historiales'),
+    path('agregar_tratamiento_paciente/', views.agregar_tratamiento_paciente, name='agregar_tratamiento_paciente'),
+
+
+
+
     ]

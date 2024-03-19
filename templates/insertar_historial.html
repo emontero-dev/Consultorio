@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h1 class="mt-5 mb-4">Insertar Historial</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="paciente_id">ID del Paciente (Valor Predeterminado):</label>
+            <input type="number" id="paciente_id" name="paciente_id" class="form-control" value="1" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Descripción:</label>
+            <textarea id="description" name="description" class="form-control" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="start_date">Fecha de Inicio:</label>
+            <input type="date" id="start_date" name="start_date" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="end_date">Fecha de Fin:</label>
+            <input type="date" id="end_date" name="end_date" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</div>
+
+   
+{% endblock %}

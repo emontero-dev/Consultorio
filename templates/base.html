@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -49,17 +50,17 @@
             height: 50px;
         }
 
-        .logo-navbar{
+        .logo-navbar {
             height: 70px;
             width: 110px;
         }
 
-        .icon-edit{
+        .icon-edit {
             width: 30px;
             height: 30px;
         }
 
-        .edit_menu  {
+        .edit_menu {
             list-style-type: none;
             display: flex;
             justify-content: center;
@@ -74,103 +75,141 @@
         }
     </style>
 </head>
+
 <body>
 
 
     {% if user.is_authenticated %}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <a class="navbar-brand nav-logo" href="{% url 'home' %}"><img class="logo-navbar" src="/media/Logo/default-logo.png" alt=""></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'home' %}"><img class="icons-dash" src="/media/Logo/Icons/home.png" alt=""></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><img class="icons-dash" src="/media/Logo/Icons/settings.png" alt=""></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout' %}"><img class="icons-dash" src="/media/Logo/Icons/logout.png" alt=""></a>
-            </li>
-        </ul>
-    </div>
-</nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand nav-logo" href="{% url 'home' %}"><img class="logo-navbar"
+                src="/media/Logo/default-logo.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}"><img class="icons-dash" src="/media/Logo/Icons/home.png"
+                            alt=""></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><img class="icons-dash" src="/media/Logo/Icons/settings.png"
+                            alt=""></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}"><img class="icons-dash"
+                            src="/media/Logo/Icons/logout.png" alt=""></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-<div class="container-fluid">
-    <div class="row">
-        <nav class="col-md-2 d-none d-md-block sidebar">
-            <div class="sidebar-sticky">
-                <ul class="nav flex-column mt-5">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'home' %}">
-                            Dashboard
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'Pacientes' %}">
-                            Pacientes
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Doctores
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Facturacion
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Doctores
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Agendar Cita
-                        </a>
-                    </li>
-
-                    <li>
-                        <hr style="border-color: white">
-                    </li>
-                    <lit>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column mt-5">
                         <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Otros
-                        </a>
-                    </li>
-                    </lit>
-                </ul>
-            </div>
-        </nav>
+                            <a class="nav-link active" href="{% url 'home' %}">
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'Pacientes' %}">
+                                Pacientes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Doctores
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Facturacion
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Doctores
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                Agendar Cita
+                            </a>
+                        </li>
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Odonto Tech </h1>
-            </div>
+                        <li>
+                            <a class="nav-item" href="{% url 'insertar_paciente' %}">
+                                Agregar Paciente
+                            </a>
+                        </li>
 
-            {% block content %}
-            <!-- Contenido del dashboard aquí -->
+                        <li>
+                            <a class="nav-item" href="{% url 'insertar_dentista' %}">
+                                Agregar Dentista
+                            </a>
+                        </li>
 
-            {% endblock %}
-        </main>
+                        <li>
+                            <a class="nav-item" href="{% url 'insertar_tratamiento' %}">
+                                Agregar Tratamiento
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-item" href="{% url 'insertar_historial' %}">
+                                Insertar Historial
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-item" href="{% url 'agregar_tratamiento_paciente' %}">
+                                Agregar Tratamiento del Paciente
+                            </a>
+                        </li>
+                    
+
+                        <li>
+                            <hr style="border-color: white">
+                        </li>
+                        <lit>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    Otros
+                                </a>
+                            </li>
+                        </lit>
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Odonto Tech </h1>
+
+                </div>
+
+                {% block content %}
+                <!-- Contenido del dashboard aquí -->
+
+                {% endblock %}
+            </main>
+        </div>
     </div>
-</div>
-        {% else %}
+    {% else %}
 
-        <script>
-            window.location.href = "{% url 'login' %}"
-        </script>
+    <script>
+        window.location.href = "{% url 'login' %}"
+    </script>
     {% endif %}
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
