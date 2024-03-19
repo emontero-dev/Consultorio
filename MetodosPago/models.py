@@ -31,7 +31,7 @@ class Facturas(models.Model):
     FacturasDetalle = models.CharField(max_length=300, null=False, blank=False)
 
     def __str__(self):
-        return self.Facturas_PacienteId
+        return self.FacturasFechaFactura
 
     class Meta:
         verbose_name_plural = "Facturas"

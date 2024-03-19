@@ -1,7 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Pacientes</h1>
+    <div class="card row">
+        <div class="card-header">
+            <h1 class="text-center">Lista de Pacientes</h1>
+        </div>
+        <div class="row pt-4 pb-2">
+
+            <div class="col-12 ml-2">
+                <a href="{% url 'insertar_paciente' %}" class="btn btn-primary me-2">Crear Nuevo Paciente</a>
+            </div>
+        </div>
 
 
     <table class="table">

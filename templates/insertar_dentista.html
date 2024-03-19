@@ -1,28 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insertar Dentista</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
 
 <body>
     <div class="container py-4">
 
-        <form method="POST" action="{% url 'insertar_dentista' %}" class="needs-validation" novalidate>
+        <form method="POST" action="{% url 'Insertar_Dentista' %}" class="needs-validation" novalidate>
 
             {% csrf_token %}
 
             <div class="mb-3">
-                <label for="Nombre" class="form-label">DentistasNombre:</label>
+                <label for="Nombre" class="form-label">Dentistas Nombre:</label>
                 <input type="text" class="form-control" id="DentistasNombre" name="DentistasNombre" required>
                 <div class="invalid-feedback">
                     Ingresa un nombre válido.
@@ -30,7 +18,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="DentistasApellido" class="form-label">DentistasApellido</label>
+                <label for="DentistasApellido" class="form-label">Dentistas Apellido</label>
                 <input type="text" class="form-control" id="DentistasApellido" name="DentistasApellido" required>
                 <div class="invalid-feedback">
                     Ingresa un primer apellido válido.
@@ -38,7 +26,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="DentistasEspecialidad" class="form-label">DentistasEspecialidad</label>
+                <label for="DentistasEspecialidad" class="form-label">Dentistas Especialidad</label>
                 <input type="text" class="form-control" id="DentistasEspecialidad" name="DentistasEspecialidad"
                     required>
                 <div class="invalid-feedback">
@@ -48,7 +36,7 @@
 
 
             <div class="mb-3">
-                <label for="DentistasTelefono" class="form-label">DentistasTelefono</label>
+                <label for="DentistasTelefono" class="form-label">Telefono</label>
                 <input type="text" class="form-control" id="DentistasTelefono" name="DentistasTelefono"
                     placeholder="Ingresa tu cédula" required>
                 <div class="invalid-feedback">
@@ -57,7 +45,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="DentistasEmail" class="form-label">DentistasEmail</label>
+                <label for="DentistasEmail" class="form-label">Email</label>
                 <input type="text" class="form-control" id="DentistasEmail" name="DentistasEmail" required>
                 <div class="invalid-feedback">
                     Ingresa un segundo apellido válido.
@@ -65,7 +53,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="DentistasEmailNormalizado" class="form-label">DentistasEmailNormalizado</label>
+                <label for="DentistasEmailNormalizado" class="form-label">Email Normalizado</label>
                 <input type="text" class="form-control" id="DentistasEmailNormalizado" name="DentistasEmailNormalizado"
                     required>
                 <div class="invalid-feedback">

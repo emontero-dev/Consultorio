@@ -20,40 +20,6 @@ def pacientes(request):
     return render(request, 'pacientes.html', context)
 
 
-def insertar_dentista(request):
-    print("Insertar dentista vista llamada")
-    if request.method == 'POST':
-        DentistasNombre = request.POST.get('DentistasNombre')
-        DentistasApellido = request.POST.get('DentistasApellido')
-        DentistasEspecialidad = request.POST.get('DentistasEspecialidad')
-        DentistasTelefono = request.POST.get('DentistasTelefono')
-        DentistasEmail = request.POST.get('DentistasEmail')
-        DentistasEmailNormalizado = request.POST.get('DentistasEmailNormalizado')
-       
-
-        if DentistasNombre and DentistasApellido and DentistasEspecialidad and DentistasTelefono and DentistasEmail and DentistasEmailNormalizado:
-            nuevo_dentista = Dentistas(
-                DentistasNombre=DentistasNombre,
-                DentistasApellido=DentistasApellido,
-                DentistasEspecialidad=DentistasEspecialidad,
-                DentistasTelefono=DentistasTelefono,
-                DentistasEmail=DentistasEmail,
-                DentistasEmailNormalizado=DentistasEmailNormalizado,
-               
-            )
-            nuevo_dentista.save()
-            messages.success(request, 'Se ha guardado el dentista exitosamente.')
-            return redirect('listar_dentistas')  # Asegúrate de definir esta vista
-        else:
-            messages.error(request, 'Por favor, complete todos los campos.')
-
-    return render(request, 'insertar_dentista.html')
-
-
-
-def listar_dentistas(request):
-    dentistas = Dentistas.objects.all()
-    return render(request, 'lista_dentistas.html', {'dentistas': dentistas})
 
 def insertar_paciente(request):
     print("Insertar paciente vista llamada")
@@ -79,15 +45,11 @@ def insertar_paciente(request):
             )
             nuevo_paciente.save()
             messages.success(request, 'Se ha guardado el paciente exitosamente.')
-            return redirect('listar_pacientes') 
+            return redirect('Pacientes')
         else:
             messages.error(request, 'Por favor, complete todos los campos.')
 
     return render(request, 'insertar_paciente.html')
-
-def listar_pacientes(request):
-    pacientes = Pacientes.objects.all()
-    return render(request, 'lista_pacientes.html', {'pacientes': pacientes})
 
 
 

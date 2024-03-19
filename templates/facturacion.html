@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <div class="row">
+            <div class="col-12 text-center mb-4">
+                <h1>Factura</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            {% for f in Pagos %}
+
+                            <div class="col-md-6">
+                                <p><strong>Factura ID:</strong> 12345</p>
+                                <p><strong>Paciente ID:</strong> {{ f.Pagos_PacienteId }}</p>
+                                <p><strong>Fecha de Factura:</strong> {{ f.PagosFechaPago }}</p>
+                            </div>
+                        </div>
+                        <table class="table mt-4">
+                            <thead>
+                                <tr>
+                                    <th>Descripción</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio Unitario</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>{{ f.PagosNombre }}</td>
+                                    <td>{{ f.Pagos_PacienteId_id }}</td>
+                                    <td>₡ {{ f.Pagos_Monto }}</td>
+                                    <td>₡ {{ f.Pagos_Monto }}</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3" style="text-align: right;"><strong>Total:</strong></td>
+                                    <td>₡ {{ f.Pagos_Monto }}</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}
