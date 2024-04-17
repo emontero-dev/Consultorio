@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="mt-4">Crear Tipo de Imagen Médica</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="tipo_nombre">Nombre del Tipo de Imagen Médica:</label>
+        <select class="form-control" id="tipo_nombre" name="tipo_nombre">
+            <option value="Rayos X">Rayos X</option>
+            <option value="Scanner">Scanner</option>
+            <option value="Tomograficas">Tomograficas</option>
+            <option value="Resonancia Magnetica">Resonancia Magnetica</option>
+        </select>
+    </div>
+
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="tipo_activo" name="tipo_activo">
+        <label class="form-check-label" for="tipo_activo">Activo</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Guardar Tipo de Imagen Médica</button>
+</form>
+
+
+
+{% endblock %}
+

@@ -12,4 +12,19 @@ urlpatterns = [
     path('insertar_historial/', views.insertar_historial, name='insertar_historial'),
     path('listar_historiales/', views.listar_historiales, name='listar_historiales'),
     path('agregar_tratamiento_paciente/', views.agregar_tratamiento_paciente, name='agregar_tratamiento_paciente'),
+    path('insertar_tipo_imagen_medica/', views.insertar_tipo_imagen_medica, name='insertar_tipo_imagen_medica'),
+    path('insertar_imagen_medica/', views.insertar_imagen_medica, name='insertar_imagen_medica'),
+
+    path('eliminar/<int:paciente_id>/', views.eliminar_paciente, name='eliminar_paciente'),
+
+    path('ver_imagenes_tipos/', views.ver_imagenes_tipos, name='ver_imagenes_tipos'),
+    path('ver_imagenes_medicas/', views.ver_imagenes_medicas, name='ver_imagenes_medicas'),
+
+    path('dentistas/edit/<int:pk>/', views.dentista_edit, name='edit_dentista'),
+    path('dentistas/information/<int:dentista_id>/', views.dentista_information, name='dentista_information'),
+    path('dentistas/delete/<int:pk>/', views.dentista_delete, name='delete_dentista'),
+
+    
+
+
 ]

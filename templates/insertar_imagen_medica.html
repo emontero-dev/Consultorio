@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Insertar Imagen Médica</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="paciente">Paciente:</label>
+            <select id="paciente" name="paciente" class="form-control" required>
+                <option value="">Seleccionar Paciente</option>
+                {% for paciente in pacientes %}
+                <option  value="{{ paciente.pk }}" class="text-color">{{ paciente.PacientesNombre }} {{ paciente.PacientesApellido }}</option>
+                {% endfor %}
+            </select>
+            
+        </div>
+
+        <div class="form-group">
+            <label for="tipo_imagen">Tipo de Imagen:</label>
+            <select id="tipo_imagen" name="tipo_imagen" class="form-control" required>
+                <option value="">Seleccionar Tipo de Imagen</option>
+                {% for tipo_imagen in tipos_imagenes %}
+                <option value="{{ tipo_imagen.pk }}">{{ tipo_imagen.ImagenesMedicasTiposNombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="descripcion">Descripción:</label>
+            <input type="text" class="form-control" id="descripcion" name="descripcion">
+        </div>
+
+        <div class="form-group">
+            <label for="imagen">Imagen:</label>
+            <input type="file" class="form-control-file" id="imagen" name="imagen">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar Imagen Médica</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+<!-- information_dentist.html -->
+
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+  <h2>Información del Dentista</h2>
+  <form>
+    {% csrf_token %}
+    {{ form.as_p }}
+  </form>
+</div>
+{% endblock %}

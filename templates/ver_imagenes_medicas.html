@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+    <h1>Imágenes Médicas</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Paciente</th>
+                <th>Tipo de Imagen</th>
+                <th>Descripción</th>
+                <th>Imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for imagen_medica in imagenes_medicas %}
+            <tr>
+                <td>{{ imagen_medica.ImagenesMedicas_PacienteId }}</td>
+                <td>{{ imagen_medica.ImagenesMedicas_Tipos }}</td>
+                <td>{{ imagen_medica.ImagenesMedicasTiposDescripcion }}</td>
+                <td><img src="{{ imagen_medica.ImagenesMedicas_Img.url }}" alt="Imagen Médica" style="max-width: 100px;"></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

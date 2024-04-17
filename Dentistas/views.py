@@ -2,7 +2,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from Pacientes.models import Dentistas
-# Create your views here.
 
 def insertar_dentista(request):
     print("Insertar dentista vista llamada")

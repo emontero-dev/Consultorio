@@ -1,17 +1,59 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Pacientes, Dentistas, Tratamientos, TratamientoPaciente,Historial
+from .models import Pacientes,  Tratamientos, TratamientoPaciente,ImagenesMedicasTipos,  ImagenesMedicas, Dentistas
 from django.core.exceptions import ValidationError
+from .forms import PacienteForm, DentistaForm, DentistaInformationForm
+
+def eliminar_paciente(request, paciente_id):
+    paciente = Pacientes.objects.get(id=paciente_id)
+    paciente.delete()
+    return redirect('Pacientes')
+
+def dentista_delete(request, pk):
+    dentista = Dentistas.objects.get(pk=pk)
+    if request.method == "POST":
+        dentista.delete()
+        return redirect('Lista_Dentistas')  # Redirige a la página de lista de dentistas después de la eliminación
+    return render(request, 'confirm_delete_dentista.html', {'dentista': dentista})
 
 
-def pacient_edit(request,pk):
+def dentista_information(request, dentista_id):
+    dentista = Dentistas.objects.get(pk=dentista_id)
+    form = DentistaInformationForm(instance=dentista)
+    return render(request, 'information_dentist.html', {'form': form})
 
+def dentista_edit(request, pk):
+    dentista = Dentistas.objects.get(pk=pk)
+    if request.method == "POST":
+        form = DentistaForm(request.POST, instance=dentista)
+        if form.is_valid():
+            form.save()
+            return redirect('edit_dentista', pk=pk)  # Redirige a la página de detalles del dentista
+    else:
+        form = DentistaForm(instance=dentista)
+    return render(request, 'edit_dentist.html', {'form': form})
+
+def pacient_edit(request, pk):
+    paciente = Pacientes.objects.get(pk=pk)
+    if request.method == "POST":
+        form = PacienteForm(request.POST, instance=paciente)
+        if form.is_valid():
+            form.save()
+            return redirect('edit', pk=pk)  # Redirige a la misma página de edición
+    else:
+        form = PacienteForm(instance=paciente)
+    return render(request, 'edit_paciente.html', {'form': form})
+
+def patient_information(request, pk):
     paciente = Pacientes.objects.get(id=pk)
-    return render(request, 'pacientes_edit.html',{'paciente':paciente} )
-
-def patient_information(request,pk):
-    paciente = Pacientes.objects.get(id=pk)
-    return render(request, 'information.html',{'paciente':paciente} )
+    
+    # Obtener las imágenes médicas del paciente
+    imagenes_medicas = ImagenesMedicas.objects.filter(ImagenesMedicas_PacienteId=paciente)
+    
+    # Obtener los tratamientos del paciente
+    tratamientos = TratamientoPaciente.objects.filter(foreign_paciente=paciente)
+    
+    return render(request, 'information.html', {'paciente': paciente, 'imagenes_medicas': imagenes_medicas, 'tratamientos': tratamientos})
 
 def pacientes(request):
     context = {
@@ -142,3 +184,59 @@ def agregar_tratamiento_paciente(request):
     tratamientos = Tratamientos.objects.all()
     pacientes = Pacientes.objects.all()
     return render(request, 'agregar_tratamiento_paciente.html', {'tratamientos': tratamientos, 'pacientes': pacientes})
+
+
+def insertar_imagen_medica(request):
+    pacientes = Pacientes.objects.all()  # Obtener todos los pacientes
+    tipos_imagenes = ImagenesMedicasTipos.objects.all()  # Obtener todos los tipos de imágenes
+    if request.method == 'POST':
+        paciente_id = request.POST.get('paciente')
+        tipo_id = request.POST.get('tipo_imagen')  # Cambié el nombre del campo
+        descripcion = request.POST.get('descripcion')
+        imagen = request.FILES.get('imagen')
+
+        if paciente_id and tipo_id and descripcion and imagen:
+            paciente = Pacientes.objects.get(pk=paciente_id)
+            tipo_imagen = ImagenesMedicasTipos.objects.get(id=tipo_id)
+            
+            nueva_imagen_medica = ImagenesMedicas(
+                ImagenesMedicas_PacienteId=paciente,
+                ImagenesMedicas_Tipos=tipo_imagen,
+                ImagenesMedicasTiposDescripcion=descripcion,
+                ImagenesMedicas_Img=imagen
+            )
+            nueva_imagen_medica.save()
+            messages.success(request, 'Se ha guardado la imagen médica exitosamente.')
+            return redirect('insertar_imagen_medica')
+        else:
+            messages.error(request, 'Por favor, complete todos los campos.')
+
+    return render(request, 'insertar_imagen_medica.html', {'pacientes': pacientes, 'tipos_imagenes': tipos_imagenes})
+
+def ver_imagenes_medicas(request):
+    imagenes_medicas = ImagenesMedicas.objects.all()
+    return render(request, 'ver_imagenes_medicas.html', {'imagenes_medicas': imagenes_medicas})
+
+def insertar_tipo_imagen_medica(request):
+    if request.method == 'POST':
+        tipo_nombre = request.POST.get('tipo_nombre')
+        tipo_activo = request.POST.get('tipo_activo') == 'on'
+
+        
+        if tipo_nombre:
+            nuevo_tipo_imagen = ImagenesMedicasTipos(
+                ImagenesMedicasTiposNombre=tipo_nombre,
+                ImagenesMedicasTiposActivo=tipo_activo
+            )
+            nuevo_tipo_imagen.save()
+            messages.success(request, 'Se ha guardado el tipo de imagen médica exitosamente.')
+            return redirect('insertar_tipo_imagen_medica')
+        else:
+            messages.error(request, 'Por favor, ingrese un nombre para el tipo de imagen médica.')
+
+    return render(request, 'insertar_tipo_imagen_medica.html')
+
+def ver_imagenes_tipos(request):
+    tipos_imagenes = ImagenesMedicasTipos.objects.all()
+    return render(request, 'ver_imagenes_tipos.html', {'tipos_imagenes': tipos_imagenes})
+
