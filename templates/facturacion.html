@@ -1,54 +1,38 @@
 {% extends 'base.html' %}
 
 {% block content %}
-        <div class="row">
-            <div class="col-12 text-center mb-4">
-                <h1>Factura</h1>
+
+    <div class="card row">
+        <div class="card-header">
+            <h1 class="text-center">Facturacion</h1>
+        </div>
+        <div class="row pt-4 pb-2">
+
+            <div class="col-6 ml-2">
+                <a href="{% url 'insertar_factura' %}" class="btn btn-primary me-2">Crear Factura</a>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            {% for f in Pagos %}
-
-                            <div class="col-md-6">
-                                <p><strong>Factura ID:</strong> 12345</p>
-                                <p><strong>Paciente ID:</strong> {{ f.Pagos_PacienteId }}</p>
-                                <p><strong>Fecha de Factura:</strong> {{ f.PagosFechaPago }}</p>
-                            </div>
-                        </div>
-                        <table class="table mt-4">
-                            <thead>
-                                <tr>
-                                    <th>Descripción</th>
-                                    <th>Cantidad</th>
-                                    <th>Precio Unitario</th>
-                                    <th>Total</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>{{ f.PagosNombre }}</td>
-                                    <td>{{ f.Pagos_PacienteId_id }}</td>
-                                    <td>₡ {{ f.Pagos_Monto }}</td>
-                                    <td>₡ {{ f.Pagos_Monto }}</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="3" style="text-align: right;"><strong>Total:</strong></td>
-                                    <td>₡ {{ f.Pagos_Monto }}</td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        {% for f in Pagos %}
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre Paciente</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Opciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{ f.id }}</td>
+                    <td>{{ f.Pagos_PacienteId }}</td>
+                    <td>{{ f.PagosFechaPago }}</td>
+                    <td>
+                        <a href="{% url 'facturacion_details' f.id %}"><img class="icon-edit" src="/media/Logo/Icons/information.png" alt=""></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        {% endfor %}
 
 {% endblock %}

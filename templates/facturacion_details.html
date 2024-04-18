@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12 text-center mb-4">
+            <h1>Factura</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                            <div class="col-md-6">
+                                <p><strong>Factura ID: </strong>{{ facturaid }}</p>
+                                <p><strong>Paciente ID:</strong> {{ Pagos.id}}</p>
+                                <p><strong>Fecha de Factura:</strong> {{ Pagos.PagosFechaPago }}</p>
+                            </div>
+                            </div>
+                            <table class="table mt-4">
+                                <thead>
+                                <tr>
+                                    <th>Descripción</th>
+                                    <th>Nombre Completo</th>
+                                    <th>Precio Unitario</th>
+                                    <th>Total</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr>
+                                    <td>{{ Pagos.PagosNombre }}</td>
+                                    <td>{{ Pagos.Pagos_PacienteId }}</td>
+                                    <td>₡ {{ Pagos.Pagos_Monto }}</td>
+                                    <td>₡ {{ Pagos.Pagos_Monto }}</td>
+                                </tr>
+                                </tbody>
+                                <tfoot>
+                                <tr>
+                                    <td colspan="3" style="text-align: right;"><strong>Total:</strong></td>
+                                    <td>₡ {{ Pagos.Pagos_Monto }}</td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

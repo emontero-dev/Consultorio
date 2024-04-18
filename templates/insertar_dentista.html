@@ -4,7 +4,15 @@
 
 <body>
     <div class="container py-4">
-
+        <div class="m-3">
+            {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-success" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+            {% endif %}
+        </div>
         <form method="POST" action="{% url 'Insertar_Dentista' %}" class="needs-validation" novalidate>
 
             {% csrf_token %}
@@ -63,11 +71,6 @@
 
             <button type="submit" class="btn btn-primary">Guardar</button>
 
-            {% if messages %}
-            {% for message in messages %}
-            <h2 style="color: green;">{{message}}</h2>
-            {% endfor %}
-            {% endif %}
         </form>
 
 

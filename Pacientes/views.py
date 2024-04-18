@@ -39,6 +39,7 @@ def pacient_edit(request, pk):
         form = PacienteForm(request.POST, instance=paciente)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Se ha actualizado el paciente exitosamente.')
             return redirect('edit', pk=pk)  # Redirige a la misma página de edición
     else:
         form = PacienteForm(instance=paciente)
@@ -46,20 +47,24 @@ def pacient_edit(request, pk):
 
 def patient_information(request, pk):
     paciente = Pacientes.objects.get(id=pk)
-    
-    # Obtener las imágenes médicas del paciente
+
     imagenes_medicas = ImagenesMedicas.objects.filter(ImagenesMedicas_PacienteId=paciente)
-    
-    # Obtener los tratamientos del paciente
+
     tratamientos = TratamientoPaciente.objects.filter(foreign_paciente=paciente)
     
     return render(request, 'information.html', {'paciente': paciente, 'imagenes_medicas': imagenes_medicas, 'tratamientos': tratamientos})
 
 def pacientes(request):
     context = {
-        'pacientes': Pacientes.objects.all()
+        'pacientes': Pacientes.objects.all().filter(PacientesActivo=True),
     }
     return render(request, 'pacientes.html', context)
+
+def pacientesInactivos(request):
+    context = {
+        'pacientes': Pacientes.objects.all().filter(PacientesActivo=False),
+    }
+    return render(request, 'pacientes_inactivos.html', context)
 
 
 

@@ -5,15 +5,24 @@
         <div class="card-header">
             <h1 class="text-center">Lista de Pacientes</h1>
         </div>
+        
         <div class="row pt-4 pb-2">
 
             <div class="col-6 ml-2">
                 <a href="{% url 'insertar_paciente' %}" class="btn btn-primary me-2">Crear Nuevo Paciente</a>
-                <a href="{% url 'pacientes_inactivos' %}" class="btn btn-danger me-2">Pacientes Inactivos</a>
+                <a href="{% url 'Pacientes' %}" class="btn btn-success me-2">Pacientes Activos</a>
             </div>
         </div>
+    <div class="m-3">
+        {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-success" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+        {% endif %}
+    </div>
 
-    
     <table class="table">
         <table class="table">
             <thead>

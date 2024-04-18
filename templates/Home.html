@@ -1,5 +1,61 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Task</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Contenido principal -->
+            <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                </div>
+
+                <!-- Sección de resumen de facturas -->
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        Resumen de Facturas
+                    </div>
+                    <div class="card-body">
+                        <p>Número total de facturas: [Número Total de Facturas]</p>
+                        <p>Monto total de facturas: [Monto Total de Facturas]</p>
+                    </div>
+                </div>
+
+                <!-- Sección de resumen de pacientes -->
+                <div class="card mb-4">
+                    <div class="card-header bg-secondary text-white">
+                        Resumen de Pacientes
+                    </div>
+                    <div class="card-body">
+                        <p>Número total de pacientes: [Número Total de Pacientes]</p>
+                    </div>
+                </div>
+
+                <!-- Sección de gráficos -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-header bg-success text-white">
+                                Gráfico de Facturas
+                            </div>
+                            <div class="card-body">
+                                <!-- Aquí puedes incluir un gráfico visual relacionado con facturas -->
+                                <img src="grafico_facturas.png" alt="Gráfico de Facturas" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-header bg-warning text-dark">
+                                Gráfico de Pacientes
+                            </div>
+                            <div class="card-body">
+                                <!-- Aquí puedes incluir un gráfico visual relacionado con pacientes -->
+                                <img src="grafico_pacientes.png" alt="Gráfico de Pacientes" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -4,6 +4,15 @@
 {% block content %}
 <div class="container mt-4">
   <h2>Editar Paciente</h2>
+  <div class="m-3">
+        {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-success" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+        {% endif %}
+    </div>  
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
