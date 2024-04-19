@@ -15,20 +15,54 @@
                         Resumen de Facturas
                     </div>
                     <div class="card-body">
-                        <p>Número total de facturas: [Número Total de Facturas]</p>
-                        <p>Monto total de facturas: [Monto Total de Facturas]</p>
+                        <div class="container mt-5">
+                            <h1 class="text-center mb-4">Resumen de Pacientes</h1>
+
+                            <div class="row">
+                                <!-- Total de Pacientes -->
+                                <div class="col-md-3">
+                                    <div class="card text-center bg-primary text-white mb-4">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Total de Pacientes</h5>
+                                            <p class="card-text display-4">350</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Pacientes Nuevos -->
+                                <div class="col-md-3">
+                                    <div class="card text-center bg-success text-white mb-4">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Pacientes Nuevos</h5>
+                                            <p class="card-text display-4">25</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Pacientes Dados de Alta -->
+                                <div class="col-md-3">
+                                    <div class="card text-center bg-info text-white mb-4">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Pacientes Dados de Alta</h5>
+                                            <p class="card-text display-4">30</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Pacientes en Tratamiento -->
+                                <div class="col-md-3">
+                                    <div class="card text-center bg-warning text-white mb-4">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Pacientes en Tratamiento</h5>
+                                            <p class="card-text display-4">45</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Sección de resumen de pacientes -->
-                <div class="card mb-4">
-                    <div class="card-header bg-secondary text-white">
-                        Resumen de Pacientes
-                    </div>
-                    <div class="card-body">
-                        <p>Número total de pacientes: [Número Total de Pacientes]</p>
-                    </div>
-                </div>
 
                 <!-- Sección de gráficos -->
                 <div class="row">
@@ -39,7 +73,7 @@
                             </div>
                             <div class="card-body">
                                 <!-- Aquí puedes incluir un gráfico visual relacionado con facturas -->
-                                <img src="grafico_facturas.png" alt="Gráfico de Facturas" class="img-fluid">
+                                <img style="width: 1000px" src="../media/imgs/Grafica_facturacion.jpg" alt="Gráfico de Facturas" class="img-fluid">
                             </div>
                         </div>
                     </div>
@@ -48,10 +82,43 @@
                             <div class="card-header bg-warning text-dark">
                                 Gráfico de Pacientes
                             </div>
-                            <div class="card-body">
-                                <!-- Aquí puedes incluir un gráfico visual relacionado con pacientes -->
-                                <img src="grafico_pacientes.png" alt="Gráfico de Pacientes" class="img-fluid">
+                            <div class="container mt-5">
+                                <h1 class="text-center mb-4">Pacientes de la Última Semana</h1>
+                                <canvas id="barChart"></canvas>
                             </div>
+
+                            <script>
+                                // Datos ficticios de pacientes de la última semana
+                                const labels = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+                                const data = {
+                                    labels: labels,
+                                    datasets: [{
+                                        label: 'Pacientes',
+                                        data: [15, 22, 30, 17, 25, 18, 20],
+                                        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                                        borderColor: 'rgba(75, 192, 192, 1)',
+                                        borderWidth: 1
+                                    }]
+                                };
+
+                                // Configuración del gráfico de barras
+                                const config = {
+                                    type: 'bar',
+                                    data: data,
+                                    options: {
+                                        responsive: true,
+                                        scales: {
+                                            y: {
+                                                beginAtZero: true
+                                            }
+                                        }
+                                    }
+                                };
+
+                                // Crear el gráfico de barras
+                                const ctx = document.getElementById('barChart').getContext('2d');
+                                new Chart(ctx, config);
+                            </script>
                         </div>
                     </div>
                 </div>
