@@ -1,38 +1,76 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
     <div class="card row">
         <div class="card-header">
-            <h1 class="text-center">Facturacion</h1>
+            <h1 class="text-center">Facturación</h1>
         </div>
         <div class="row pt-4 pb-2">
-
             <div class="col-6 ml-2">
                 <a href="{% url 'insertar_factura' %}" class="btn btn-primary me-2">Crear Factura</a>
             </div>
         </div>
-        {% for f in Pagos %}
-            <table class="table">
-                <thead>
+
+        <table class="table">
+            <thead>
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Nombre Paciente</th>
                     <th scope="col">Fecha</th>
                     <th scope="col">Opciones</th>
                 </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>{{ f.id }}</td>
-                    <td>{{ f.Pagos_PacienteId }}</td>
-                    <td>{{ f.PagosFechaPago }}</td>
-                    <td>
-                        <a href="{% url 'facturacion_details' f.id %}"><img class="icon-edit" src="/media/Logo/Icons/information.png" alt=""></a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        {% endfor %}
+            </thead>
+            <tbody>
+                {% for f in page_obj %}
+                    <tr>
+                        <td>{{ f.id }}</td>
+                        <td>{{ f.Pagos_PacienteId }}</td>
+                        <td>{{ f.PagosFechaPago }}</td>
+                        <td>
+                            <a href="{% url 'facturacion_details' f.id %}"><img class="icon-edit" src="/media/Logo/Icons/information.png" alt=""></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
+        
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <span class="page-link">Anterior</span>
+                    </li>
+                {% endif %}
+
+                
+                {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                        <li class="page-item active">
+                            <span class="page-link">{{ num }}</span>
+                        </li>
+                    {% else %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+
+                
+                {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <span class="page-link">Siguiente</span>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
 {% endblock %}

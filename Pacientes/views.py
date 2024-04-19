@@ -3,6 +3,7 @@ from django.contrib import messages
 from .models import Pacientes,  Tratamientos, TratamientoPaciente,ImagenesMedicasTipos,  ImagenesMedicas, Dentistas
 from django.core.exceptions import ValidationError
 from .forms import PacienteForm, DentistaForm, DentistaInformationForm
+from django.core.paginator import Paginator
 
 def eliminar_paciente(request, paciente_id):
     paciente = Pacientes.objects.get(id=paciente_id)
@@ -55,17 +56,33 @@ def patient_information(request, pk):
     return render(request, 'information.html', {'paciente': paciente, 'imagenes_medicas': imagenes_medicas, 'tratamientos': tratamientos})
 
 def pacientes(request):
+
+    pacientes = Pacientes.objects.filter(PacientesActivo=True)
+
+    paginator = Paginator(pacientes, 10)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+
     context = {
-        'pacientes': Pacientes.objects.all().filter(PacientesActivo=True),
+        'page_obj': page_obj
     }
+
     return render(request, 'pacientes.html', context)
 
-def pacientesInactivos(request):
-    context = {
-        'pacientes': Pacientes.objects.all().filter(PacientesActivo=False),
-    }
-    return render(request, 'pacientes_inactivos.html', context)
+def pacientes_inactivos(request):
 
+    pacientes = Pacientes.objects.filter(PacientesActivo=False)
+
+    paginator = Paginator(pacientes, 10)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        'page_obj': page_obj
+    }
+
+    return render(request, 'pacientes_inactivos.html', context)
 
 
 def insertar_paciente(request):
