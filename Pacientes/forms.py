@@ -6,12 +6,19 @@ from .models import Pacientes, Dentistas
 class PacienteForm(forms.ModelForm):
     class Meta:
         model = Pacientes
-        fields = ['PacientesNombre', 'PacientesApellido', 'PacientesDireccion', 'PacientesTelefono', 'PacientesEmail', 'PacientesActivo']
+        fields = ['PacientesNombre', 'PacientesApellido', 'PacientesDireccion', 'PacientesTelefono', 'PacientesEmail',
+                  'PacientesActivo']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        for field_name in self.fields:
-            self.fields[field_name].widget.attrs.update({'class': 'form-control'})
+
+
+        self.fields['PacientesNombre'].widget.attrs.update({'class': 'form-control'})
+        self.fields['PacientesApellido'].widget.attrs.update({'class': 'form-control'})
+        self.fields['PacientesDireccion'].widget.attrs.update({'class': 'form-control'})
+        self.fields['PacientesTelefono'].widget.attrs.update({'class': 'form-control'})
+        self.fields['PacientesEmail'].widget.attrs.update({'class': 'form-control'})
+        self.fields['PacientesActivo'].widget.attrs.update({'class': 'form-check-input ' + 'm-2'})
 
 
 class DentistaForm(forms.ModelForm):
