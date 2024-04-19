@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ee2b99c-cb79-4c6d-aaf4-a172d851423f" name="Changes" comment="graficas">
+    <list default="true" id="9ee2b99c-cb79-4c6d-aaf4-a172d851423f" name="Changes" comment="graficas update html">
+      <change afterPath="$PROJECT_DIR$/media/Logo/favicon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacientes/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacientes/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +126,7 @@
       <workItem from="1710193675990" duration="21000" />
       <workItem from="1713400417529" duration="6563000" />
       <workItem from="1713407276193" duration="971000" />
-      <workItem from="1713485422101" duration="1747000" />
+      <workItem from="1713485422101" duration="2302000" />
     </task>
     <task id="LOCAL-00001" summary="graficas">
       <option name="closed" value="true" />
@@ -136,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713486569727</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="graficas update html">
+      <option name="closed" value="true" />
+      <created>1713487218108</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713487218108</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +164,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="graficas" />
-    <option name="LAST_COMMIT_MESSAGE" value="graficas" />
+    <MESSAGE value="graficas update html" />
+    <option name="LAST_COMMIT_MESSAGE" value="graficas update html" />
   </component>
 </project>
