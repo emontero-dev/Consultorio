@@ -59,7 +59,7 @@ def pacientes(request):
 
     pacientes = Pacientes.objects.filter(PacientesActivo=True)
 
-    paginator = Paginator(pacientes, 5)
+    paginator = Paginator(pacientes, 10)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 

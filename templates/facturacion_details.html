@@ -11,41 +11,57 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row">
-                            <div class="col-md-6">
-                                <p><strong>Factura ID: </strong>{{ facturaid }}</p>
-                                <p><strong>Paciente ID:</strong> {{ Pagos.id}}</p>
-                                <p><strong>Fecha de Factura:</strong> {{ Pagos.PagosFechaPago }}</p>
-                            </div>
-                            </div>
-                            <table class="table mt-4">
-                                <thead>
-                                <tr>
-                                    <th>Descripción</th>
-                                    <th>Nombre Completo</th>
-                                    <th>Precio Unitario</th>
-                                    <th>Total</th>
-                                </tr>
-                                </thead>
+                        <div class="col-md-6">
+                            <p><strong>Factura ID: </strong>{{ facturaid }}</p>
+                            <p><strong>Paciente ID:</strong> {{ Pagos.id }}</p>
+                            <p><strong>Fecha de Factura:</strong> {{ Pagos.PagosFechaPago }}</p>
+                        </div>
+                    </div>
+                    <table class="table mt-4">
+                        <thead>
+                            <tr>
+                                <th>Descripción</th>
+                                <th>Nombre Completo</th>
+                                <th>Precio Unitario</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{ Pagos.PagosNombre }}</td>
+                                <td>{{ Pagos.Pagos_PacienteId }}</td>
+                                <td>₡ {{ Pagos.Pagos_Monto }}</td>
+                                <td>₡ {{ Pagos.Pagos_Monto }}</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3" style="text-align: right;"><strong>Total:</strong></td>
+                                <td>₡ {{ Pagos.Pagos_Monto }}</td>
+                            </tr>
+                        </tfoot>
+                    </table>
 
-                                <tbody>
-                                <tr>
-                                    <td>{{ Pagos.PagosNombre }}</td>
-                                    <td>{{ Pagos.Pagos_PacienteId }}</td>
-                                    <td>₡ {{ Pagos.Pagos_Monto }}</td>
-                                    <td>₡ {{ Pagos.Pagos_Monto }}</td>
-                                </tr>
-                                </tbody>
-                                <tfoot>
-                                <tr>
-                                    <td colspan="3" style="text-align: right;"><strong>Total:</strong></td>
-                                    <td>₡ {{ Pagos.Pagos_Monto }}</td>
-                                </tr>
-                                </tfoot>
-                            </table>
+
+                    <div class="mt-4">
+                        <button class="btn btn-primary me-2" onclick="enviarFactura()">Enviar</button>
+                        <button class="btn btn-secondary" onclick="imprimirFactura()">Imprimir</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-
 {% endblock %}
+
+<script>
+
+    function enviarFactura() {
+
+        alert('Función de envío no implementada');
+    }
+
+    function imprimirFactura() {
+        window.print();
+    }
+</script>

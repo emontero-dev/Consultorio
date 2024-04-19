@@ -1,14 +1,24 @@
 from django.shortcuts import render,redirect
 from . import models
 from django.contrib import messages
+from django.core.paginator import Paginator
+
 
 def facturacion_list(request):
-    Pagos = models.Pagos.objects.all()
-    total = 0
-    for pago in Pagos:
-        total =+ pago.Pagos_Monto
+    pagos_queryset = models.Pagos.objects.all()
 
-    return render(request, 'facturacion.html', {'Pagos': Pagos, 'total': total})
+    paginator = Paginator(pagos_queryset, 10)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    total = sum(pago.Pagos_Monto for pago in pagos_queryset)
+
+    context = {
+        'page_obj': page_obj,
+        'total': total
+    }
+
+    return render(request, 'facturacion.html', context)
 
 def facturacion_details(request, id):
     Pagos = models.Pagos.objects.get(id=id)

@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ee2b99c-cb79-4c6d-aaf4-a172d851423f" name="Changes" comment="favicon added">
+    <list default="true" id="9ee2b99c-cb79-4c6d-aaf4-a172d851423f" name="Changes" comment="PA-001 (Sistema de paginacion)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pacientes/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacientes/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MetodosPago/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MetodosPago/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pacientes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacientes/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pacientes.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pacientes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pacientes_inactivos.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pacientes_inactivos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/facturacion.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/facturacion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/facturacion_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/facturacion_details.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +135,7 @@
       <workItem from="1713400417529" duration="6563000" />
       <workItem from="1713407276193" duration="971000" />
       <workItem from="1713485422101" duration="2332000" />
-      <workItem from="1713489419525" duration="1053000" />
+      <workItem from="1713489419525" duration="1907000" />
     </task>
     <task id="LOCAL-00001" summary="graficas">
       <option name="closed" value="true" />
@@ -161,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713487733952</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="PA-001 (Sistema de paginacion)">
+      <option name="closed" value="true" />
+      <created>1713490497094</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713490497095</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +191,7 @@
     <MESSAGE value="graficas" />
     <MESSAGE value="graficas update html" />
     <MESSAGE value="favicon added" />
-    <option name="LAST_COMMIT_MESSAGE" value="favicon added" />
+    <MESSAGE value="PA-001 (Sistema de paginacion)" />
+    <option name="LAST_COMMIT_MESSAGE" value="PA-001 (Sistema de paginacion)" />
   </component>
 </project>
