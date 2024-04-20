@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Pacientes,  Tratamientos, TratamientoPaciente,ImagenesMedicasTipos,  ImagenesMedicas, Dentistas
+from .models import Pacientes,  Tratamientos, TratamientoPaciente,ImagenesMedicasTipos,  ImagenesMedicas, Dentistas, Agenda
 from django.core.exceptions import ValidationError
-from .forms import PacienteForm, DentistaForm, DentistaInformationForm
+from .forms import PacienteForm, DentistaForm, DentistaInformationForm, AgendaForm
 from django.core.paginator import Paginator
 
 def eliminar_paciente(request, paciente_id):
@@ -262,3 +262,40 @@ def ver_imagenes_tipos(request):
     tipos_imagenes = ImagenesMedicasTipos.objects.all()
     return render(request, 'ver_imagenes_tipos.html', {'tipos_imagenes': tipos_imagenes})
 
+
+def agenda_create(request):
+    if request.method == 'POST':
+        form = AgendaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Paciente agendado correctamente.')
+            return redirect('agenda_list')
+    else:
+        form = AgendaForm()
+    return render(request, 'agenda.html', {'form': form})
+
+def AgendaList(request):
+    agendas = Agenda.objects.all().filter(Confirmada=False)
+
+    paginator = Paginator(agendas, 10)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        'agendas': page_obj,
+    }
+
+    return render(request, 'agenda_list.html', context)
+
+def AgendaListFinalizado(request):
+    agendas = Agenda.objects.all().filter(Confirmada=True)
+
+    paginator = Paginator(agendas, 10)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        'agendas': page_obj,
+    }
+
+    return render(request, 'agenda_list_finalizado.html', context)

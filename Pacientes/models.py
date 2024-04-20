@@ -39,11 +39,16 @@ class Tratamientos(models.Model):
     nombre_tratamiento = models.CharField(max_length=100, null=False, blank=False, default='valor_predeterminado', verbose_name="nombre_tratamiento")
     Precio = models.DecimalField(max_digits=10, decimal_places=2)
 
+    def __str__(self):
+        return self.nombre_tratamiento
+
 class TratamientoPaciente(models.Model):
     Tratamiento_Paciente_id = models.AutoField(primary_key=True)
     Tratamiento_id_foreignkey = models.ForeignKey(Tratamientos, on_delete=models.CASCADE)
     Pieza_dental = models.IntegerField()
     foreign_paciente = models.ForeignKey(Pacientes, on_delete=models.CASCADE)
+
+
 
 class Historial(models.Model):
     Id_Historial = models.AutoField(primary_key=True)
@@ -79,3 +84,18 @@ class ImagenesMedicas(models.Model):
     class Meta:
         verbose_name_plural = "Imagenes Medicas"
 
+
+class Agenda(models.Model):
+    id = models.AutoField(primary_key=True )
+    Dentistas_id = models.ForeignKey(Dentistas, on_delete=models.DO_NOTHING, verbose_name="Seleccione el Dentista")
+    Pacientes_id = models.ForeignKey(Pacientes, on_delete=models.DO_NOTHING , verbose_name="Seleccione el Paciente")
+    Fecha = models.DateTimeField(verbose_name="Fecha y Hora", null=False, blank=False)
+    Status = models.BooleanField(default=True, verbose_name="Activo")
+    Confirmada = models.BooleanField(default=False, verbose_name="Finalizado")
+    TipoTratamiento = models.ForeignKey(Tratamientos, on_delete=models.DO_NOTHING, null=True, blank=True)
+
+    def __str__(self):
+        return f"Agenda para {self.Pacientes_id.PacientesNombre} {self.Pacientes_id.PacientesApellido}"
+
+    class Meta:
+        verbose_name_plural = "Agenda"

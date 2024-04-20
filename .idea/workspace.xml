@@ -4,13 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ee2b99c-cb79-4c6d-aaf4-a172d851423f" name="Changes" comment="PA-001 (Sistema de paginacion)">
+    <list default="true" id="9ee2b99c-cb79-4c6d-aaf4-a172d851423f" name="Changes" comment="PA-001 (Sistema de paginacion) v.2">
+      <change afterPath="$PROJECT_DIR$/Pacientes/migrations/0008_agenda.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pacientes/migrations/0009_remove_agenda_horafin_remove_agenda_horainicio_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Reservas_Template.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/agenda.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/agenda_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/agenda_list_finalizado.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MetodosPago/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/MetodosPago/form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MetodosPago/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/MetodosPago/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MetodosPago/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MetodosPago/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacientes/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacientes/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacientes/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacientes/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacientes/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacientes/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pacientes/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacientes/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pacientes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Pacientes/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/facturacion.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/facturacion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/facturacion_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/facturacion_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/insertar_factura.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/insertar_factura.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,28 +60,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Django Server.Consultorio.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "django.template.preview.state": "SHOW_EDITOR",
-    "git-widget-placeholder": "PA-001",
-    "last_opened_file_path": "/home/emonterodev/Documents/Consultorio/templates",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.Consultorio.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;PA-001&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/emonterodev/Documents/Consultorio/templates&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates" />
@@ -135,7 +148,8 @@
       <workItem from="1713400417529" duration="6563000" />
       <workItem from="1713407276193" duration="971000" />
       <workItem from="1713485422101" duration="2332000" />
-      <workItem from="1713489419525" duration="1907000" />
+      <workItem from="1713489419525" duration="3924000" />
+      <workItem from="1713629887280" duration="9011000" />
     </task>
     <task id="LOCAL-00001" summary="graficas">
       <option name="closed" value="true" />
@@ -169,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713490497095</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="PA-001 (Sistema de paginacion) v.2">
+      <option name="closed" value="true" />
+      <created>1713491336953</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713491336953</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +214,7 @@
     <MESSAGE value="graficas update html" />
     <MESSAGE value="favicon added" />
     <MESSAGE value="PA-001 (Sistema de paginacion)" />
-    <option name="LAST_COMMIT_MESSAGE" value="PA-001 (Sistema de paginacion)" />
+    <MESSAGE value="PA-001 (Sistema de paginacion) v.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="PA-001 (Sistema de paginacion) v.2" />
   </component>
 </project>

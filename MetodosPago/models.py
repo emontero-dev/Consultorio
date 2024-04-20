@@ -12,10 +12,10 @@ class MetodosPago(models.Model):
         verbose_name_plural = "Metodos de Pago"
 
 class Pagos(models.Model):
-    PagosNombre = models.CharField(max_length=100, null=False, blank=False)
-    Pagos_PacienteId = models.ForeignKey(Pacientes, on_delete=models.DO_NOTHING, null=False, blank=False)
-    PagosFechaPago = models.DateField(null=False, blank=False)
-    Pagos_Monto = models.DecimalField(null=False, blank=False, max_digits=10, decimal_places=2)
+    PagosNombre = models.CharField(max_length=100, null=False, blank=False, verbose_name="Detalle")
+    Pagos_PacienteId = models.ForeignKey(Pacientes, on_delete=models.DO_NOTHING, null=False, blank=False, verbose_name="Paciente")
+    PagosFechaPago = models.DateField(null=False, blank=False, verbose_name="Fecha de Pago")
+    Pagos_Monto = models.DecimalField(null=False, blank=False, max_digits=10, decimal_places=2, verbose_name="Monto")
     PagosActivo = models.BooleanField(default=True)
 
     def __str__(self):

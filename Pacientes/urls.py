@@ -26,6 +26,9 @@ urlpatterns = [
     path('dentistas/delete/<int:pk>/', views.dentista_delete, name='delete_dentista'),
     path('pacientes-inactivos/', views.pacientes_inactivos, name='pacientes_inactivos'),
     path('admin/', admin.site.urls),
+    path('agendas/add/', views.agenda_create, name='agenda'),
+    path('agendas/', views.AgendaList, name='agenda_list'),
+    path('agendas/finalizado/', views.AgendaListFinalizado, name='agenda_list_finalizado'),
 
     
 
