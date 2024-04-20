@@ -33,3 +33,9 @@ class Admin(admin.ModelAdmin):
 class ModelNameAdmin(admin.ModelAdmin):
     list_display = ('id', 'ImagenesMedicas_PacienteId', 'ImagenesMedicas_Tipos', 'ImagenesMedicasTiposDescripcion', 'ImagenesMedicas_Img')
     list_display_links = ('id', 'ImagenesMedicas_PacienteId')
+
+@admin.register(models.Agenda)
+class ModelNameAdmin(admin.ModelAdmin):
+    list_display = ('id', 'Dentistas_id', 'Pacientes_id', 'Fecha', 'Status', 'Confirmada', 'TipoTratamiento')
+    list_display_links = ('id', 'Dentistas_id')
+

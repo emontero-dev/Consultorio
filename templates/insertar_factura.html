@@ -1,33 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="container">
-        <div class="container mt-5">
-            <h1>Insertar Factura</h1>
-            <form action="{% url 'insertar_factura' %}" method="POST">
-                {% csrf_token %}
-                <div class="form-group">
-                    <label for="FacturasNombre">Nombre de la Factura</label>
-                    <input type="text" name="FacturasNombre" class="form-control" id="FacturasNombre" required>
-                </div>
-                <div class="form-group">
-                    <label for="FacturasFechaFactura">Fecha de la Factura</label>
-                    <input type="date" name="FacturasFechaFactura" class="form-control" id="FacturasFechaFactura"
-                           required>
-                </div>
-                <div class="form-group">
-                    <label for="Facturas_Monto">Monto de la Factura</label>
-                    <input type="number" name="Facturas_Monto" class="form-control" id="Facturas_Monto" required>
-                </div>
-                <div class="form-group">
-                    <label for="Facturas_PacienteId">Paciente</label>
-                    <select name="Facturas_PacienteId" class="form-control" id="Facturas_PacienteId" required>
-                        {% for paciente in pacientes %}
-                            <option value="{{ paciente.id }}">{{ paciente.PacientesNombre }} {{ paciente.PacientesApellido }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary">Guardar Factura</button>
-            </form>
-        </div>
+    <div class="container mt-4">
+        <h2>Formulario de Pagos</h2>
+        <form method="post" class="mt-4">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Guardar Pago</button>
+        </form>
+    </div>
 {% endblock %}
